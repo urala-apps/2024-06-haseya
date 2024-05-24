@@ -74,7 +74,6 @@ $('.btn-items').append('<li class="inner"><label><div class="flexItem flexItemTo
 const click_id_left = "btn_id_left";
 const click_id_right = "btn_id_right";
 
-
 $('form').submit(function (event) {
   event.preventDefault();
 
@@ -94,59 +93,15 @@ $('form').submit(function (event) {
   data.push({ name: 'menu', value: voteText });
   data.push({ name: 'shop', value: shopName });
 
+  // GASへ送信
+  $.post(GASUrl, data);
 
-
-  // alertを表示させる("投票しました！");
+  // alert("投票しました！");
   Swal.fire({
     title: "投票完了！",
-    text: "「アサヒ " + voteText + "」 に投票しました。",
+    text: shopName + " ／ " + voteText + "\nに投票しました。",
     icon: "success"
-
-  }).then((result) => {
-    Swal.fire({
-      title: "アンケートに回答すると\n当選確率UP!!"
-      , text: "「アサヒ " + voteText + '」 を選んだ理由を教えてください！'
-      , input: 'text'
-      , showCancelButton: true
-      , confirmButtonText: 'OK'
-      , showLoaderOnConfirm: true
-      , preConfirm: function (inputStr) {
-        console.log('preConfirm起動');
-
-        //バリデーションを入れたりしても良い
-        // if (inputStr !== 'aaa') {
-        //   return Swal.showValidationMessage('aaaを入力してね');
-        // }
-
-        //ローディングを表示させるために3秒スリープ
-        var sleep = function (sec) {
-          return new Promise(resolve => {
-            setTimeout(resolve, sec * 1000);
-          });
-        };
-        return sleep(2);
-
-      }
-      , allowOutsideClick: function () {
-        return !Swal.isLoading();
-      }
-    }).then(function (result) {
-      console.log(result);
-      data.push({ name: 'comment', value: result.value });
-      // GASへ送信
-      $.post(GASUrl, data);
-
-      if (result.value) {
-
-        Swal.fire({
-          title: 'ご協力ありがとうございました！'
-          , text: '投票理由: ' + result.value
-        });
-      }
-    });
-
   });
-
 
   // 投票したら、LINEのメッセージを送信する
 
