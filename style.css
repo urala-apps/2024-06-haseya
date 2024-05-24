@@ -261,6 +261,31 @@ img.btn_animate00 {
   }
 }
 
+
+.btn_animate020 {
+  width: 100px;
+  height: 100px;
+  margin: -15px auto;
+  border-radius: 50px;
+  /* background: #95dade; */
+  animation: fuwafuwa 2s infinite;
+}
+
+@keyframes fuwafuwa {
+  0% {
+    transform: translateY(-30px);
+  }
+
+  50% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(-30px);
+  }
+}
+
+
 .btn_animate03 {
   margin: -20px auto;
   width: 80px;
