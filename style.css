@@ -262,16 +262,16 @@ img.btn_animate00 {
 }
 
 
-.btn_animate020 {
+.btn_animate02_R {
   width: 100px;
   height: 100px;
   margin: -15px auto;
   border-radius: 50px;
   /* background: #95dade; */
-  animation: fuwafuwa 2s infinite;
+  animation: fuwafuwa_R 2s infinite;
 }
 
-@keyframes fuwafuwa {
+@keyframes fuwafuwa_R {
   0% {
     transform: translateY(-30px);
   }
@@ -321,6 +321,55 @@ img.btn_animate00 {
     transform: rotate(-10deg);
   }
 }
+
+
+.btn_animate05 {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  border-radius: 50px;
+  /* background: #95dade; */
+  animation: zoom 2s infinite;
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(1.5, 1.5) translateY(0px);
+  }
+
+  50% {
+    transform: scale(1.0, 1.0) translateY(0px);
+  }
+
+  100% {
+    transform: scale(1.5, 1.5) translateY(0px);
+  }
+}
+
+
+.btn_animate05_R {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  border-radius: 50px;
+  /* background: #95dade; */
+  animation: zoom_R 2s infinite;
+}
+
+@keyframes zoom_R {
+  0% {
+    transform: scale(1.0, 1.0) translateY(0px);
+  }
+
+  50% {
+    transform: scale(1.5, 1.5) translateY(0px);
+  }
+
+  100% {
+    transform: scale(1.0, 1.0) translateY(0px);
+  }
+}
+
 
 button {
   height: fit-content;
