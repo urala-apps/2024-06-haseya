@@ -88,6 +88,7 @@ body {
   align-items: flex-end;
   /* padding: 0;
   margin: 0; */
+  margin: 0 auto;
   width: 100%;
   height: 100%;
 }
@@ -328,7 +329,7 @@ img.btn_animate00 {
   width: 100px;
   height: 100px;
   margin: 0 auto;
-  border-radius: 50px;
+  /* border-radius: 50px; */
   /* background: #95dade; */
   animation: zoom 2s infinite;
 }
@@ -352,7 +353,7 @@ img.btn_animate00 {
   width: 100px;
   height: 100px;
   margin: 0 auto;
-  border-radius: 50px;
+  /* border-radius: 50px; */
   /* background: #95dade; */
   animation: zoom_R 2s infinite;
 }
